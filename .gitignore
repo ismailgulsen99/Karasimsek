@@ -1,32 +1,24 @@
-# Prerequisites
-*.d
+void setup()
+{
+  pinMode( 9, OUTPUT);
+  pinMode(10, OUTPUT);
+  pinMode(11, OUTPUT);
+  pinMode(12, OUTPUT);
+  pinMode(13, OUTPUT);
+}
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+void loop()
+{
+  for(int i=9; i<=13; i++)  //baştan sona ledler yanıyor
+  {
+    digitalWrite(i, HIGH);
+    delay(500);
+    digitalWrite(i, LOW);
+  }
+  for(int j=13; j>10; j--)  //sondan başa dönüyor. 10 yazmamın sebebi baştaki led diğerleriyle aynı sürede yanması için.
+  {
+    digitalWrite(j-1, HIGH);
+    delay(500);
+    digitalWrite(j-1, LOW);
+  }
+}
